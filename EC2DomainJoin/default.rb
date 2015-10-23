@@ -7,3 +7,4 @@ Chef::Log.info("******executing domainjoin ******")
 execute 'EC2DomainJoin' do
   command 'c:/Windows/Temp/EC2DomainJoin.exe'
 end
+Chef::Log.info("******domain join complete ******")
