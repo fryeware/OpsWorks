@@ -12,7 +12,7 @@ namespace InstallRDSH
     {
         static void Main(string[] args)
         {
-            string script = "\"this is where we will install session hosting\" | out-file $Env:TEMP\\test.txt";
+            string script = "\"this is where we will install session hosting\" | out-file $Env:TEMP\\InstallRDSH.txt";
             PowerShell ps = PowerShell.Create();
             ps.AddScript(script);
             ps.Invoke();

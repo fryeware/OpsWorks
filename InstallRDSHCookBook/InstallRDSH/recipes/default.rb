@@ -5,6 +5,6 @@ remote_file 'C:/Windows/Temp/InstallRDSH.exe' do
 end
 Chef::Log.info("******executing installrdsh ******")
 execute 'InstallRDSH' do
-  command 'c:/Windows/Temp/InstallRDSHn.exe'
+  command 'c:/Windows/Temp/InstallRDSH.exe'
 end
 Chef::Log.info("******session host feature install complete ******")
