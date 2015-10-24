@@ -9,20 +9,16 @@ execute 'firefox' do
 end
 Chef::Log.info("******firefox install complete ******")
 Chef::Log.info("******downloading firefox override.ini .******")
-remote_file 'c:\program files(x86)\Mozilla Firefox\' do
+remote_file 'c:/program files(x86)/Mozilla Firefox/override.ini' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
   action :create
 end
-remote_file 'c:\program files(x86)\Mozilla Firefox\browser' do
+remote_file 'c:/program files(x86)/Mozilla Firefox/browser/override.ini' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
   action :create
 end
 Chef::Log.info("******downloading firefox preferences .******")
-remote_file 'c:\program files(x86)\Mozilla Firefox\' do
-  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
-  action :create
-end
-remote_file 'C:\Program Files (x86)\Mozilla Firefox\browser\defaults\preferences' do
+remote_file 'C:/Program Files (x86)/Mozilla Firefox/browser/defaults/preferences/AllUsers.js' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/AllUsers.js'
   action :create
 end
