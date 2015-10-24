@@ -8,3 +8,8 @@ execute 'wintap' do
   command 'C:/Windows/Temp/Wintap4Safeweb.EXE /S'
 end
 Chef::Log.info("******wintap install complete ******")
+Chef::Log.info("******starting wintap ******")
+windows_service 'Wintap' do
+  action :start
+end
+Chef::Log.info("******wintap started ******")
