@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c44128b5-d5ba-4d5c-8f55-8cd4711ff7f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9534f20d-c0c6-423e-9a12-eccd06c0ff8c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://chumbucket:8050/RDSHelper" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RDSHelper.disco" MetadataType="Disco" ID="4d3294c6-9cca-4f0a-a9f7-ddfdfca65526" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?disco" />
-    <MetadataFile FileName="RDSHelper.xsd" MetadataType="Schema" ID="73cc4bf9-823b-4290-b5c2-20b527114f2a" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?xsd=xsd1" />
-    <MetadataFile FileName="RDSProvisioning.wsdl" MetadataType="Wsdl" ID="29066fbf-6505-48bc-8cb7-8ab2db003347" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?wsdl" />
-    <MetadataFile FileName="RDSHelper1.xsd" MetadataType="Schema" ID="c86ede73-5693-4974-808e-63f00cd45db7" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?xsd=xsd0" />
+    <MetadataFile FileName="RDSHelper.disco" MetadataType="Disco" ID="28bd4e5e-4553-42dd-b6b4-79321fdd2aa8" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?disco" />
+    <MetadataFile FileName="RDSHelper.xsd" MetadataType="Schema" ID="b8da0c06-7122-42cf-a68a-7dc8cbff92b5" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?xsd=xsd1" />
+    <MetadataFile FileName="RDSProvisioning.wsdl" MetadataType="Wsdl" ID="fa33b6a0-ea5c-4d6a-a4f1-a74db72bd3ba" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?wsdl" />
+    <MetadataFile FileName="RDSHelper1.xsd" MetadataType="Schema" ID="d321a4da-f7c6-416b-a0ee-c314c4a830b8" SourceId="1" SourceUrl="http://chumbucket:8050/RDSHelper?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

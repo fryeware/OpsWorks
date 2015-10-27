@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Management.Automation;
 using System.Net;
 
 namespace RemoveSessionHost
@@ -27,11 +26,13 @@ namespace RemoveSessionHost
             //WebRequest request = WebRequest.Create("http://safeweb-wf1:8080/RemoveSafewebServer/" + Environment.GetEnvironmentVariable("COMPUTERNAME").ToLower() + ".safeweb.aws.net");
             //request.Credentials = CredentialCache.DefaultCredentials;
             //WebResponse response = request.GetResponse();
-
+            Console.WriteLine("WP1");
             RDSHelper.RDSProvisioningClient rdsHelper = new RDSHelper.RDSProvisioningClient();
-            rdsHelper.RemoveMeLS(Environment.GetEnvironmentVariable("COMPUTERNAME") + ".safeweb.aws.net");
 
-
+            Console.WriteLine("WP2");
+            string cname = Environment.GetEnvironmentVariable("COMPUTERNAME") + ".safeweb.aws.net";
+            rdsHelper.RemoveMeLS(cname);
+            Console.WriteLine("WP3");
         }
     }
 }
