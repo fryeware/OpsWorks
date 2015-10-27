@@ -4,7 +4,7 @@ remote_file 'C:/Windows/Temp/RemoveSessionHost.exe' do
   action :create
 end
 remote_file 'C:/Windows/Temp/RemoveSessionHost.exe.config' do
-  source 'http://172.31.31.252/apps/RemoveSessionHost.exe.config'
+  source 'http://172.31.31.252/apps/RemoveSessionHostConfig.exe'
   action :create
 end
 Chef::Log.info("******executing safeweb shutdown code ******")
