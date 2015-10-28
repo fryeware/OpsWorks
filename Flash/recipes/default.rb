@@ -7,4 +7,4 @@ Chef::Log.info("******executing flash installer ******")
 execute 'flash' do
   command 'C:/Windows/Temp/flash_player -install'
 end
-Chef::Log.info("******flash install complete ******")
+Chef::Log.info("******flash install complete *******")
