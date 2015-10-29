@@ -15,6 +15,6 @@ remote_file 'C:/Windows/Temp/WLS-SafewebConfig.reg' do
 end
 Chef::Log.info("******Configure WLS ******")
 execute 'WLSconfig' do
-  command 'C:/Windows/system32/reg.exe  /import C:/Windows/Temp/WLS-SafewebConfig.reg' 
+  command 'C:/Windows/system32/reg.exe import C:/Windows/Temp/WLS-SafewebConfig.reg' 
 end
 Chef::Log.info("******WLS Configure Complete ******")
