@@ -1,6 +1,6 @@
 Chef::Log.info("******downloading WLS ******")
 remote_file 'C:/Windows/Temp/WLS.exe' do
-  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/WLS/WLS.exe'
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/WLS.exe'
   action :create
 end
 Chef::Log.info("******executing WLS installer ******")
@@ -10,7 +10,7 @@ end
 Chef::Log.info("******WLS install complete ******")
 Chef::Log.info("******downloading WLS Configure ******")
 remote_file 'C:/Windows/Temp/WLS-SafewebConfig.reg' do
-  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/WLS/WLS-SafewebConfig.reg'
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/WLS-SafewebConfig.reg'
   action :create
 end
 Chef::Log.info("******Configure WLS ******")
