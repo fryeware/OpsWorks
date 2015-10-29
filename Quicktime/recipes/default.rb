@@ -1,5 +1,5 @@
 Chef::Log.info("******downloading Quicktime player ******")
-remote_file 'C:/Windows/Temp/Acrobat' do
+remote_file 'C:/Windows/Temp/Quicktime' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/Quicktime.exe'
   action :create
 end
