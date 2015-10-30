@@ -1,4 +1,4 @@
-Chef::Log.info("******downloading firefox installer.***4***")
+Chef::Log.info("******downloading firefox installer.******")
 remote_file 'C:/Windows/Temp/FirefoxSetup.exe' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/LLNL_FF_38_3_0_ESR_wCCK.EXE'
   action :create
@@ -25,4 +25,9 @@ remote_file 'C:/PROGRA~2/MOZILL~1/browser/defaults/preferences/AllUsers.js' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/AllUsers.js'
   action :create
 end
+Chef::Log.info("******downloading firefox autoupdate file .******")
+remote_file 'C:/PROGRA~2/MOZILL~1/browser/defaults/pref/autoupdate.js' do
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/autoupdate.js'
+  action :create
 Chef::Log.info("******Firefox configuration complete .******")
+
