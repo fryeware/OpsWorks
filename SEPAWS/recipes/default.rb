@@ -16,7 +16,7 @@ remote_file 'C:/Windows/Temp/sepaws.exe' do
 end
 Chef::Log.info("******Executing SEPAWS installer ******")
 execute 'sepaws' do
-  command 'C:/Windows/Temp/sepaws.exe /s'
+  command 'C:/Windows/Temp/sepaws.exe'
 end
 Chef::Log.info("****** SEPAWS install complete ******")
 
