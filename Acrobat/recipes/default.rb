@@ -1,5 +1,5 @@
 Chef::Log.info("******downloading Acrobat Reader******")
-remote_file 'C:/Windows/Temp/Acrobat.exe' do
+remote_file 'C:/Windows/Temp/acrobat.exe' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/acrobat.exe'
   action :create
 end
