@@ -26,7 +26,7 @@ remote_file 'C:/PROGRA~2/MOZILL~1/browser/defaults/preferences/AllUsers.js' do
   action :create
 end
 Chef::Log.info("******downloading firefox autoupdate file .******")
-remote_file 'C:/PROGRA~2/MOZILL~1/browser/defaults/pref/autoupdate.js' do
+remote_file 'C:/PROGRA~2/MOZILL~1/defaults/pref/autoupdate.js' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/autoupdate.js'
   action :create
   end
