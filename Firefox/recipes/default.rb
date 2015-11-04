@@ -5,7 +5,7 @@ remote_file 'C:/Windows/Temp/FirefoxSetup.exe' do
 end
 Chef::Log.info("******Executing Firefox installer ******")
 execute 'firefox' do
-  command 'C:/Windows/Temp/FirefoxSetup.exe'
+  command 'C:/Windows/Temp/FirefoxSetup.exe /silent'
 end
 Chef::Log.info("****** Firefox install complete ******")
 Chef::Log.info("******downloading firefox override.ini .******")
