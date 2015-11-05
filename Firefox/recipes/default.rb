@@ -17,6 +17,11 @@ remote_file 'C:/PROGRA~2/MOZILL~1/browser/override.ini' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
   action :create
 end
+Chef::Log.info("******Create Parent Directory for configuration files*********")
+directory 'C:/PROGRA~2/MOZILL~1/browser/defaults/' do
+  action :create
+end
+Chef::Log.info("*****Create Child Directory for configuration files**********")
 directory 'C:/PROGRA~2/MOZILL~1/browser/defaults/preferences' do
   action :create
 end
