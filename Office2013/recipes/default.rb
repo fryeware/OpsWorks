@@ -1,15 +1,10 @@
-Chef::Log.info("******downloading wintap installer.******")
-remote_file 'C:/Windows/Temp/Wintap4Safeweb.EXE' do
-  source 'http://172.31.31.252/apps/Wintap4Safeweb.EXE'
+Chef::Log.info("******Downloading Office2013 installer.******")
+remote_file 'C:/Windows/Temp/officeme.bat' do
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/officeme.bat'
   action :create
 end
-Chef::Log.info("******executing wintap installer ******")
-execute 'wintap' do
-  command 'C:/Windows/Temp/Wintap4Safeweb.EXE /S'
+Chef::Log.info("******Executing Office2013 installer ******")
+execute 'officeme' do
+  command 'C:/Windows/Temp/officeme.bat'
 end
-Chef::Log.info("******wintap install complete ******")
-Chef::Log.info("******starting wintap ******")
-windows_service 'Wintap' do
-  action :start
-end
-Chef::Log.info("******wintap started ******")
+Chef::Log.info("******Office2013 installation complete ******")
