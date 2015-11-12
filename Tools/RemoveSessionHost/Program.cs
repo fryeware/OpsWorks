@@ -28,7 +28,7 @@ namespace RemoveSessionHost
             //WebResponse response = request.GetResponse();
             RDSHelper.RDSProvisioningClient rdsHelper = new RDSHelper.RDSProvisioningClient();
             string instanceId = getInstanceId();
-            rdsHelper.RemoveMeLS(instanceId);
+            rdsHelper.RemoveMeLS(Environment.GetEnvironmentVariable("COMPUTERNAME") + ";" + instanceId);
         }
 
         private static string getInstanceId()
