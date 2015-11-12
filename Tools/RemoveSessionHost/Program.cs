@@ -26,13 +26,16 @@ namespace RemoveSessionHost
             //WebRequest request = WebRequest.Create("http://safeweb-wf1:8080/RemoveSafewebServer/" + Environment.GetEnvironmentVariable("COMPUTERNAME").ToLower() + ".safeweb.aws.net");
             //request.Credentials = CredentialCache.DefaultCredentials;
             //WebResponse response = request.GetResponse();
-            Console.WriteLine("WP1");
             RDSHelper.RDSProvisioningClient rdsHelper = new RDSHelper.RDSProvisioningClient();
+            string instanceId = getInstanceId();
+            rdsHelper.RemoveMeLS(instanceId);
+        }
 
-            Console.WriteLine("WP2");
-            string cname = Environment.GetEnvironmentVariable("COMPUTERNAME") + ".safeweb.aws.net";
-            rdsHelper.RemoveMeLS(cname);
-            Console.WriteLine("WP3");
+        private static string getInstanceId()
+        {
+            WebClient webClient = new WebClient();
+            string rc = webClient.DownloadString("http://instance-data/latest/meta-data/instance-id");
+            return rc;
         }
     }
 }

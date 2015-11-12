@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Management.Automation;
 using System.Collections.ObjectModel;
+using System.Net;
 
 namespace InstallRDSH
 {
@@ -17,6 +18,13 @@ namespace InstallRDSH
             ps.AddScript(script);
             ps.Invoke();
             ps.Dispose();
+        }
+
+        private static string getInstanceId()
+        {
+            WebClient webClient = new WebClient();
+            string rc = webClient.DownloadString("http://instance-data/latest/meta-data/instance-id");
+            return rc;
         }
     }
 }
