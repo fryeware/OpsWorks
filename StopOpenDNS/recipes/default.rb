@@ -3,11 +3,11 @@ Chef::Log.info("******Stopping OpenDNS ******")
    action :stop 
  end 
  Chef::Log.info("******Running ipconfig /flushdns ******") 
- execute 'ipconfigflush' do
+ execute 'stopopendns' do
 	command 'c:/Windows/System32/ipconfig.exe /flushdns'
 end
 Chef::Log.info("****Running ipcofig /registerdns *******")
-execute 'ipconfigreg' do
+execute 'stopopendns' do
 	command 'c:/Windows/System32/ipconfig.exe /registerdns'
 end
 Chef::Log.info("*****Download DNS Registry Entry")
@@ -16,15 +16,15 @@ remote_file 'C:/Windows/Temp/m3networkdns.reg' do
   action :create
 end
 Chef::Log.info("****Import DNS Registry Entry*******")
-execute 'regimport' do
+execute 'stopopendns' do
 	command 'C:/Windows/system32/reg.exe import C:/Windows/Temp/m3networkdns.reg' 
 end
 Chef::Log.info("******2nd Running ipconfig /flushdns ******") 
- execute 'ipconfigflush' do
+ execute 'stopopendns' do
 	command 'c:/Windows/System32/ipconfig.exe /flushdns'
 end
 Chef::Log.info("****2nd Running ipcofig /registerdns *******")
-execute 'ipconfigreg' do
+execute 'stopopendns' do
 	command 'c:/Windows/System32/ipconfig.exe /registerdns'
 end
 Chef::Log.info("****OpenDNS Stopped and DC set to DNS completed******")
