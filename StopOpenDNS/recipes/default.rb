@@ -12,11 +12,11 @@ execute 'ipconfigreg' do
 end
 Chef::Log.info("*****Download DNS Registry Entry")
 remote_file 'C:/Windows/Temp/m3networkdns.reg' do
-  source 'http://172.31.31.252/apps/m3networkdns.reg'
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/m3networkdns.reg'
   action :create
 end
 Chef::Log.info("****Import DNS Registry Entry*******")
-execute 'regimport'
+execute 'regimport' do
 	command 'C:/Windows/system32/reg.exe import C:/Windows/Temp/m3networkdns.reg' 
 end
 Chef::Log.info("******2nd Running ipconfig /flushdns ******") 
