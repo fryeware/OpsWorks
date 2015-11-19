@@ -26,9 +26,15 @@ namespace RemoveSessionHost
             //WebRequest request = WebRequest.Create("http://safeweb-wf1:8080/RemoveSafewebServer/" + Environment.GetEnvironmentVariable("COMPUTERNAME").ToLower() + ".safeweb.aws.net");
             //request.Credentials = CredentialCache.DefaultCredentials;
             //WebResponse response = request.GetResponse();
+            Console.WriteLine("Creating web service client");
             RDSHelper.RDSProvisioningClient rdsHelper = new RDSHelper.RDSProvisioningClient();
-            string instanceId = getInstanceId();
-            rdsHelper.RemoveMeLS(Environment.GetEnvironmentVariable("COMPUTERNAME") + ";" + instanceId);
+            Console.WriteLine("Getting Ec2 Id from metadata");
+            //string instanceId = getInstanceId();
+            string instanceId = "hi";
+            string param = Environment.GetEnvironmentVariable("COMPUTERNAME") + ";" + instanceId;
+            Console.WriteLine("Making web request with params: " + param);
+            rdsHelper.RemoveMeLS(param);
+            Console.WriteLine("Complete");
         }
 
         private static string getInstanceId()
