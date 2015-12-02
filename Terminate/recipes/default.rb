@@ -3,8 +3,8 @@ remote_file 'C:/Windows/Temp/TerminateEc2.exe' do
   source 'http://172.31.31.252/apps/TerminateEc2.exe'
   action :create
 end
-remote_file 'C:/Windows/Temp/TerminateEc2.exe.config' do
-  source 'http://172.31.31.252/apps/RemoveSessionHostConfig.exe'
+remote_file 'C:/Windows/Temp/Newtonsoft.Json.dll' do
+  source 'http://172.31.31.252/apps/Newtonsoft.Json.dll'
   action :create
 end
 Chef::Log.info("******executing safeweb shutdown code ******")
