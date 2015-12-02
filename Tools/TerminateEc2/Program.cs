@@ -12,12 +12,19 @@ namespace TerminateEc2
         static void Main(string[] args)
         {
             Console.WriteLine("Creating web service client");
-            RDSHelper.RDSProvisioningClient rdsHelper = new RDSHelper.RDSProvisioningClient();
-            Console.WriteLine("Getting Ec2 Id from metadata");
-            string instanceId = getInstanceId();
-            Console.WriteLine("Making web request with params: " + instanceId);
-            rdsHelper.TerminateEc2(instanceId);
+            OpsWorksServer server = new OpsWorksServer();
+            server.Name = Environment.GetEnvironmentVariable("COMPUTERNAME");
+            server.InstanceId = getInstanceId();
+            Console.WriteLine("attempting to call DELETE method.  params:  NAME: " + server.Name + " id: " + server.InstanceId);
+            doDELETE(server);
             Console.WriteLine("Complete");
+        }
+
+        static async Task doDELETE(OpsWorksServer serverObj)
+        {
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(serverObj);
+            WebClient web = new WebClient();
+            web.UploadString("http://safeweb-wf1/OpsWorksApi/api/SessionHost?serverObj=" + json, "DELETE", json);
         }
 
         private static string getInstanceId()
@@ -27,4 +34,12 @@ namespace TerminateEc2
             return rc;
         }
     }
+
+    public class OpsWorksServer
+    {
+        public string Name { get; set; }
+        public string InstanceId { get; set; }
+        public string Broker { get; set; }
+    }
 }
+
