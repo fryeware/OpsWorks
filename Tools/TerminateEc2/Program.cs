@@ -24,7 +24,8 @@ namespace TerminateEc2
         {
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(serverObj);
             WebClient web = new WebClient();
-            web.UploadString("http://safeweb-wf1/OpsWorksApi/api/SessionHost?serverObj=" + json, "DELETE", json);
+            //web.UploadString("http://safeweb-wf1/OpsWorksApi/api/SessionHost?serverObj=" + json, "DELETE", json);
+            web.UploadString("http://safeweb-wf1/OpsWorksApiDev/api/SessionHost?serverObj=" + json, "DELETE", json);
         }
 
         private static string getInstanceId()
