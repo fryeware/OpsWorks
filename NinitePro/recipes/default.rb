@@ -1,13 +1,13 @@
 Chef::Log.info("******downloading NinitePro installer.******")
-remote_file 'C:/Windows/Temp/NiniteProTrial.exe' do
-  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/NiniteProTrial.exe'
+remote_file 'C:/Windows/Temp/NinitePro.exe' do
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/NinitePro.exe'
   action :create
 end
-Chef::Log.info("******executing NinieProTrial installer ******")
+Chef::Log.info("******executing NiniePro installer ******")
 execute 'niniteprotrial' do
-  command 'C:/Windows/Temp/NiniteProTrial.exe /select Chrome Firefox QuickTime Reader Shockwave Silverlight /silent c:/Windows/Temp/report.txt'
+  command 'C:/Windows/Temp/NinitePro.exe /select Chrome Firefox QuickTime Reader Shockwave Silverlight /silent c:/Windows/Temp/report.txt'
 end
-Chef::Log.info("****** NiniteProTrial install complete ******")
+Chef::Log.info("****** NinitePro install complete ******")
 Chef::Log.info("******downloading firefox override.ini .******")
 remote_file 'C:/PROGRA~2/MOZILL~1/override.ini' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
