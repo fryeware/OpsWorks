@@ -1,13 +1,13 @@
-Chef::Log.info("******Downloading Firefox installer.******")  
-remote_file 'C:/Windows/Temp/FirefoxSetup.exe' do  
- source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/Firefox_Setup_38.5.2esr_ENU.exe' 
+Chef::Log.info("******downloading NinitePro installer.******")
+remote_file 'C:/Windows/Temp/NinitePro.exe' do
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/NinitePro.exe'
   action :create
 end
-Chef::Log.info("******Executing Firefox installer ******")
-execute 'firefox' do
-  command 'C:/Windows/Temp/FirefoxSetup.exe /silent'
+Chef::Log.info("******executing NiniePro installer ******")
+execute 'niniteprotrial' do
+  command 'C:/Windows/Temp/NinitePro.exe /select Chrome "Firefox ESR" Flash QuickTime Reader Shockwave Silverlight /silent c:/Windows/Temp/report.txt'
 end
-Chef::Log.info("****** Firefox install complete ******")
+Chef::Log.info("****** NinitePro install complete ******")
 Chef::Log.info("******downloading firefox override.ini .******")
 remote_file 'C:/PROGRA~2/MOZILL~1/override.ini' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/override.ini'
@@ -36,4 +36,3 @@ remote_file 'C:/PROGRA~2/MOZILL~1/defaults/pref/autoupdate.js' do
   action :create
   end
 Chef::Log.info("******Firefox configuration complete .******")
-
