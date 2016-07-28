@@ -5,9 +5,14 @@ remote_file 'C:/Windows/Temp/sepclienttest.exe' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SepClientTest/sepclienttest.exe'
   action :create
 end
-Chef::Log.info("******Executing SEPClientTest installer ******")
-execute 'sepclienttest' do
-  command 'C:/Windows/Temp/sepclienttest.exe'
+Chef::Log.info("******Downloading SEPClientTest Batch File.******")
+remote_file 'C:/Windows/Temp/runsep.bat' do
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SepClientTest/runsep.bat'
+  action :create
+end
+Chef::Log.info("******Executing SEPClientTest Batch File ******")
+execute 'runsep' do
+  command 'C:/Windows/Temp/runsep.bat'
 end
 Chef::Log.info("****** SEPClientTest install complete ******")
 Chef::Log.info("******Downloading Quiet SEP Reg Key ******")
