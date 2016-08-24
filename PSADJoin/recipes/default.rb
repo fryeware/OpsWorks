@@ -8,5 +8,4 @@ $cred = New-Object System.Management.Automation.PsCredential("safeweb\safetydanc
 Add-Computer -DomainName "Safeweb.AWS.Net" -OUPath "OU=SessionHosts,DC=safeweb,DC=aws,DC=net" -Credential $cred;
 Restart-Computer;
   EOH
-  guard_interpreter :powershell_script
   end
