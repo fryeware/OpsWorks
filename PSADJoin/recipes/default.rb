@@ -6,7 +6,7 @@ Set-DNSClientServerAddress -interfaceIndex 12 -ServerAddresses ("172.31.43.98","
   EOH
   guard_interpreter :powershell_script
   end
-  Chef::Log.info(****Join Computer to Safeweb Domain)
+Chef::Log.info("****Join Computer to Safeweb Domain****")
   # Join Safeweb domain with OU
 windows_ad_computer "safeweb.aws.net" do
   action :join
