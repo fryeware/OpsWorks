@@ -1,6 +1,6 @@
 Chef::Log.info("******downloading wintap installer.******")
 remote_file 'C:/Windows/Temp/Wintap4Safeweb.EXE' do
-  source 'http://172.31.31.252/apps/Wintap4SafewebOpsWorks/Wintap4Safeweb.EXE'
+  source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/Wintap4Safeweb.EXE'
   action :create
 end
 Chef::Log.info("******executing wintap installer ******")
