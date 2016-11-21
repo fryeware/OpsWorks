@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+# encoding: Windows-1252
 Chef::Log.info("******Creating No Connect Eve Scheduled Task******")
 
 powershell_script "PSNoConnectsEveSW" do
