@@ -10,4 +10,4 @@ Register-ScheduledTask -Xml (get-content c:/Windows/Temp/PSLogOutRunt.xml | out-
     EOH
   guard_interpreter :powershell_script
   end
-  Chef::Log.info("******Evening Logout Scheduled Task Created******")
+  Chef::Log.info("******Evening Logout Scheduled Task Created*****")
