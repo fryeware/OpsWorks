@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # encoding: Windows-1252
 Chef::Log.info("******Creating Evening Logout Scheduled Task ******")
 
