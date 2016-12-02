@@ -1,12 +1,12 @@
-Chef::Log.info("******Downloading Powershell AlarmMe script to creat AWS CloudWatch Alarm ******")
-remote_file 'C:/Windows/Temp/AlarmMe2.ps1' do
-source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SafewebPS/AlarmMe.ps1'
-action :create
-end
-Chef::Log.info("******Download Complete for Powershell script to create AWS CloudWatch Alarm******")
+#!/usr/bin/env ruby
+# encoding: Windows-1252
+Chef::Log.info("******Creating Evening Logout Scheduled Task ******")
 
-Chef::Log.info("******Executing PowerShell Script to create AWS CloudWatch Alarm******")
-execute 'AlarmMe2' do
-command 'powershell -file C:/Windows/Temp/AlarmMe2.ps1'
-end
-Chef::Log.info("******Powershell script for AWS CloudWatch Alarm completed******")
+powershell_script "PSLogOutRunt" do
+  code <<-EOH
+Invoke-WebRequest https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SafewebPS/AlarmMe.ps1 -OutFile c:/Windows/Temp/AlarmMe.ps1;
+c:/Windows/Temp/AlarmMe.ps1
+EOH
+  guard_interpreter :powershell_script
+  end
+  Chef::Log.info("******PS Created AWS Alarm in CloudWatch******")
