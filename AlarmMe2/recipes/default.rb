@@ -7,6 +7,6 @@ Chef::Log.info("******Download Complete for Powershell script to create AWS Clou
 
 Chef::Log.info("******Executing PowerShell Script to create AWS CloudWatch Alarm******")
 powershell_script 'AlarmMe2' do
-code "C:/Windows/Temp/AlarmMe2.ps1"
+command "C:/Windows/Temp/AlarmMe2.ps1"
 end
 Chef::Log.info("******AWS CloudWatch Alarm Created******")
