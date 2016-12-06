@@ -2,7 +2,7 @@
 # encoding: Windows-1252
 Chef::Log.info("******Creating Evening Logout Scheduled Task ******")
 
-powershell_script "PSLogOutSW" do
+powershell_script 'PSLogOutSW' do
   code <<-EOH
 Invoke-WebRequest https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SafewebPS/PSLogOutSW.ps1 -OutFile c:/Windows/Temp/PSLogOutSW.ps1;
 Invoke-WebRequest https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/SafewebPS/PSLogOutSW.xml -OutFile c:/Windows/Temp/PSLogOutSW.xml;
