@@ -1,5 +1,3 @@
-
-
 Chef::Log.info("******Downloading SEPClient installer.******")
 remote_file 'C:/Windows/Temp/sepclient.exe' do
   source 'https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/sepclient.exe'
