@@ -8,7 +8,7 @@ powershell_script "Install PSOffice2013" do
 
 New-PSDrive -PSProvider Filesystem -Name P -Root "//172.31.43.194/office" -Credential $cred;
 
-P:/x64/setup.exe;
+&'P:/x64/setup.exe';
   EOH
   guard_interpreter :powershell_script
   end
