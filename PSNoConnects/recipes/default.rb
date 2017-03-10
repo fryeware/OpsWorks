@@ -19,6 +19,7 @@ if($name.Contains("linux")){
 Invoke-WebRequest https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/LinuxDev/NoConnectsSWL.ps1 -OutFile c:/Windows/Temp/NoConnectsSWL.ps1;
 Invoke-WebRequest https://s3-us-west-2.amazonaws.com/safeweb-application-repo-test/LinuxDev/NoConnectsSWL.xml -OutFile c:/Windows/Temp/NoConnectsSWL.xml;
 Register-ScheduledTask -Xml (get-content c:/Windows/Temp/NoConnectsSWL.xml | out-string) -TaskName \"No Evening Connections for Safeweb Linux\" -User safeweb\\safetydance -Password Pass4saf –Force;}
+   EOH
   guard_interpreter :powershell_script
   end
   Chef::Log.info("****** No Connect for BigBoys, Runt, or Linux Scheduled Task Created******")
