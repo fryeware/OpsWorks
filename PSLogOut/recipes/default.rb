@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # encoding: Windows-1252
-Chef::Log.info("******Creating User Logout Scheduled Task ******")
+Chef::Log.info("******Creating User Logout Scheduled Task for all Safeweb Configurations******")
 
 powershell_script 'PSLogOutRunt' do
   code <<-EOH
