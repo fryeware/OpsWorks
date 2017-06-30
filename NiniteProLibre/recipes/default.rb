@@ -5,7 +5,7 @@ remote_file 'C:/Windows/Temp/NinitePro.exe' do
 end
 Chef::Log.info("******executing NiniePro Includes Libre Office installer ******")
 execute 'niniteprotrial' do
-  command 'C:/Windows/Temp/NinitePro.exe /select LibreOffice Chrome "Firefox ESR" Flash QuickTime Reader Shockwave Silverlight /silent c:/Windows/Temp/report.txt'
+  command 'C:/Windows/Temp/NinitePro.exe /select LibreOffice Spotify Chrome "Firefox ESR" Flash QuickTime Reader Shockwave Silverlight /silent c:/Windows/Temp/report.txt'
 end
 Chef::Log.info("****** NinitePro Includes Libre Office install complete ******")
 Chef::Log.info("******downloading firefox override.ini .******")
